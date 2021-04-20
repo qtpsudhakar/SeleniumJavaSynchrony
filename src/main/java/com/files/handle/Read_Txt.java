@@ -20,6 +20,8 @@ public class Read_Txt {
             BufferedReader br = new BufferedReader(fr);
 
             String ln = br.readLine();
+//            ln.split(","); //comma seperated values
+
             while (ln!=null){
                 System.out.println(ln);
                 ln = br.readLine();
