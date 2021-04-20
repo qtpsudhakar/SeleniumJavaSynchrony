@@ -1,0 +1,47 @@
+Interfaces are used for defining set of rules to the implementing classes
+We create method definitions in interfaces. Before java 8 we do not have any facility to add method body in interface method.
+
+A method without having body is called abstract method.
+By default methods are abstract in interface. 
+We cannot create instance for interface.
+We have to develop methods with body in implementing classes.
+we have to use "implements" keyword to implement a class for interface
+If a class is implementing interface it must write body for the interface methods or it must be abstract class
+
+A class can implement multiple interfaces
+
+We can create instance for class and take it as interface
+In that case only the methods defined in interface can be accessible
+If you create instance for class and take it as the same class then you can access all methods of that class
+
+We can implement method with body inside of interface from java 8 onwards.
+for that the method must be static or default.
+
+if a method is static or default then the implementing class may not need to implement the body for that method.
+
+When a class implementing multiple interfaces then we can create instance using any interface or we can create instance using one interface and cast to other interface
+
+Interfacename1 i1 = new classname();
+
+Interfacename2 i2 = (Interfacename2) i1;
+
+In this case only those methods defined in respective interface wil be accessed.
+
+Create Interface: Right click on project -> new -> Interface
+
+
+public class classNAme implements interfacename{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

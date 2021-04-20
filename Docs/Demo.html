@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+	p{color:red}
+	.demo{ background-color: tomato;
+	}
+</style>
+</head>
+
+<body>
+
+	<h1 align="center" style="color:blue">Sample Web Page </h1>
+    <p>This is a sample regstration form</p>
+    
+    <table>
+    <tr>
+    <td>FirstName:</td>
+    <td><input type="text" id="fname" /></td>
+    </tr>
+    
+    <tr>
+    <td class="demo" trainer="sudhakar">LastName:</td>
+    <td><input type="text" /></td>
+    </tr>
+    <tr>
+    <td>Email:</td>
+    <td><input type="text" /></td>
+    </tr>
+    
+    <tr>
+    <td>Gender:</td>
+    <td>Male<input type="radio" name="g"> Female<input type="radio" name="g"></td>
+    </tr>
+    <tr>
+    <td>Country:</td>
+    <td><select>     
+    <option>India</option>
+    <option>US</option>
+    <option>China</option>
+    </select></td>
+    </tr>  
+        
+    <tr>
+    <td>Vegetarian:</td>
+    <td><input type="checkbox" /></td>
+    </tr>
+    <tr>
+    <td colspan=2 align="center"><input type="button" value="register" onclick="demo()" /></td>
+    </tr>
+    
+    </table>
+        
+    PageLink: <a href="https://www.selenium.dev/">selenium</a>
+    
+    
+    <script>
+    	function demo(){
+        	let fn = document.getElementById("fname").value
+        	alert(fn);
+        }
+    </script>
+</body>
+
+</html>
