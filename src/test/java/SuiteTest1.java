@@ -3,7 +3,9 @@ import com.googlecode.junittoolbox.WildcardPatternSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-@RunWith(WildcardPatternSuite.class)
+
+@RunWith(WildcardPatternSuite.class) //this feature is not coming from junit
+//its from junit-toolbox
 @SuiteClasses("**/*.class")
 public class SuiteTest1 {
 }
