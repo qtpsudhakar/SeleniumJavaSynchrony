@@ -1,0 +1,13 @@
+{
+  "TC_AddEmp_001":
+    {
+      "firstName": "John",
+      "lastName": "Doe"
+    }
+  ,
+  "TC_EditEmp_002":
+    {
+      "firstName": "sudhakar",
+      "lastName": "k"
+    }
+}
