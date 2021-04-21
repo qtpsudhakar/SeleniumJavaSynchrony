@@ -1,3 +1,5 @@
+package com.tests;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
@@ -12,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class OhrmAddDeleteEmployee {
+public class OhrmAddDeleteEmployeeTest {
     private static WebDriver driver;
     private static String empId;
 

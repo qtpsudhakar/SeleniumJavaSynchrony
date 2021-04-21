@@ -1,3 +1,5 @@
+package com.tests;
+
 import org.junit.*;
 
 public class GoogleTest {

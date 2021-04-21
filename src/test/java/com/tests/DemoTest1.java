@@ -1,7 +1,12 @@
+package com.tests;
+
+import com.categories.Smoke;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+@Category(Smoke.class)
 public class DemoTest1 {
 
     //pre & post condition
