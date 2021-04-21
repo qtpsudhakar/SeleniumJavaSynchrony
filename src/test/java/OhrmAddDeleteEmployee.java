@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -12,8 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OhrmAddDeleteEmployee {
-    static WebDriver driver;
-    String empId;
+    private static WebDriver driver;
+    private static String empId;
+
     @Test
     public void t1_OpenApplication(){
         WebDriverManager.chromedriver().setup();
@@ -23,6 +25,10 @@ public class OhrmAddDeleteEmployee {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
         driver.get("https://opensource-demo.orangehrmlive.com/");
+
+        Assert.assertTrue(driver.findElement(By.xpath("//input[@name='txtUsername']")).isDisplayed());
+
+        Assert.assertEquals(1,driver.findElements(By.xpath("//input[@name='txtUsername']")).size());
 
     }
 
