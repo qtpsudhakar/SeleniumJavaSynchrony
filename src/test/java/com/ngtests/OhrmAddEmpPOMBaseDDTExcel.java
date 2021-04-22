@@ -3,10 +3,11 @@ package com.ngtests;
 import com.wd.pom.AddEmpPage;
 import com.wd.pom.LoginPage;
 import com.wd.pom.WelcomePage;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class OhrmAddEmpPOMBaseDDT extends BaseTest{
+import java.util.HashMap;
+
+public class OhrmAddEmpPOMBaseDDTExcel extends BaseTest{
 
     @Test
     public void login() {
@@ -18,17 +19,15 @@ public class OhrmAddEmpPOMBaseDDT extends BaseTest{
 
     }
 
-    @Test(dependsOnMethods = "login",dataProvider = "getData",dataProviderClass = DpLib.class)
-    public void addEmployee(String fname,String lname){
+    @Test(dependsOnMethods = "login",dataProvider = "getExcelData",dataProviderClass = DpLib.class)
+    public void addEmployee(HashMap<String,String> empData) {
+
         WelcomePage welcomePage = new WelcomePage();
         welcomePage.clickOnPIM();
         welcomePage.clickOnAddEmployee();
         AddEmpPage addEmpPage = new AddEmpPage();
-        addEmpPage.enterFirstName(fname);
-        addEmpPage.enterLastName(lname);
+        addEmpPage.enterFirstName(empData.get("fname"));
+        addEmpPage.enterLastName(empData.get("lname"));
         addEmpPage.clickOnSave();
     }
-
-
-
 }

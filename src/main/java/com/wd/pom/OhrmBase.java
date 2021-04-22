@@ -41,7 +41,7 @@ public class OhrmBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get("https://opensource-demo.orangehrmlive.com/");
+        driver.get("http://localhost/orangehrm/symfony/web/index.php/auth/login");
     }
 
     public void closeApplication(){
