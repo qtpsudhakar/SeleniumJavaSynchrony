@@ -42,7 +42,7 @@ public class GoogleTest {
         System.out.println("Logged out of application");
     }
 
-    @Test
+    @Test (groups = "smoke")
     public void CreateAndSendMail(){
         System.out.println("Mail created and sent");
     }
@@ -50,5 +50,10 @@ public class GoogleTest {
     @Test(enabled = false)
     public void CheckMail(){
         System.out.println("Mail checked");
+    }
+
+    @BeforeGroups (groups = "smoke")
+    public void beforeSmoke(){
+        System.out.println("this is before smoke group");
     }
 }
