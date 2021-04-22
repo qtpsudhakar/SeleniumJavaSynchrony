@@ -1,5 +1,6 @@
 package com.ngtests;
 
+import com.wd.pom.AddEmpPage;
 import com.wd.pom.LoginPage;
 import com.wd.pom.OhrmBase;
 import com.wd.pom.WelcomePage;
@@ -25,5 +26,11 @@ public class OhrmAddEmpPOMBase extends BaseTest{
         WelcomePage welcomePage = new WelcomePage();
         welcomePage.clickOnPIM();
         welcomePage.clickOnAddEmployee();
+        AddEmpPage addEmpPage = new AddEmpPage();
+        addEmpPage.enterFirstName("selenium");
+        addEmpPage.enterLastName("dev");
+        addEmpPage.clickOnSave();
     }
+
+
 }
