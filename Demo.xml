@@ -1,0 +1,11 @@
+<suite name="reg" >
+    <test name="c1">
+
+        <packages>
+
+            <package name="com.ngtests" />
+        </packages>
+
+    </test>
+
+</suite>
