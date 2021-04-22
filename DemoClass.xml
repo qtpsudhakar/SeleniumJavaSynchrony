@@ -5,6 +5,7 @@
 
             <class name="com.ngtests.DemoTest1" />
             <class name="com.ngtests.GoogleTest" />
+            <class name="com.ngtests.OhrmAddDeleteEmployeeTest" />
         </classes>
 
     </test>
