@@ -44,6 +44,9 @@ public class OhrmBase {
         driver.get("https://opensource-demo.orangehrmlive.com/");
     }
 
+    public void closeApplication(){
+        driver.quit();
+    }
     public WebElement getElement(By locator){
         return driver.findElement(locator);
     }
