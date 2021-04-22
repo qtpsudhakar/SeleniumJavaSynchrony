@@ -4,6 +4,25 @@ import org.testng.annotations.*;
 
 public class GoogleTest {
 
+    @BeforeSuite
+    public void setSetup(){
+        System.out.println("this is before suite");
+    }
+
+    @AfterSuite
+    public void closeSetup(){
+        System.out.println("this is after suite");
+    }
+    @BeforeTest
+    public void setTestSetup(){
+        System.out.println("this is before test");
+    }
+
+    @AfterTest
+    public void closeTestSetup(){
+        System.out.println("this is after test");
+    }
+
     @BeforeClass
     public void openApplication(){
         System.out.println("Gmail Opened");

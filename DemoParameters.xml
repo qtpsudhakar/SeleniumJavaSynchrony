@@ -1,8 +1,22 @@
 <suite name="reg" >
+
+    <parameters>
+        <parameter name="browser" value="chrome" />
+        <parameter name="appurl" value="http://opensource-demo.orangehrmlive.com/" />
+    </parameters>
+
     <test name="c1">
 
+        <classes>
+            <class name="com.ngtests.OhrmAddEmpPOMBase" />
+        </classes>
+
+    </test>
+
+    <test name="c2">
+
         <parameters>
-            <parameter name="browser" value="chrome" />
+            <parameter name="browser" value="firefox" />
         </parameters>
 
         <classes>
