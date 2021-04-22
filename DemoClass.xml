@@ -1,0 +1,12 @@
+<suite name="reg" >
+    <test name="c1">
+
+        <classes>
+
+            <class name="com.ngtests.DemoTest1" />
+            <class name="com.ngtests.GoogleTest" />
+        </classes>
+
+    </test>
+
+</suite>
