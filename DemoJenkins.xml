@@ -1,0 +1,11 @@
+<suite name="reg" >
+
+    <test name="c1">
+
+        <classes>
+            <class name="com.ngtests.OhrmAddDeleteEmployeeTest" />
+        </classes>
+
+    </test>
+
+</suite>

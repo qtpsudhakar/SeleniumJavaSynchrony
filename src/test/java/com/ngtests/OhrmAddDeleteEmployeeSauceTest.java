@@ -5,23 +5,24 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class OhrmAddDeleteEmployeeTest {
+public class OhrmAddDeleteEmployeeSauceTest {
     private WebDriver driver;
     private String empId;
 
@@ -38,16 +39,19 @@ public class OhrmAddDeleteEmployeeTest {
     }
 
     @Test
-    public void OpenApplication(){
+    public void OpenApplication() throws URISyntaxException, MalformedURLException {
 
-        String brName=System.getProperty("browser");
-        if (brName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        }else if (brName.equalsIgnoreCase("firefox")){
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
+        //remotewebdriver takes session information
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("chrome");
+        capabilities.setPlatform(Platform.WIN10);
+
+        //login saucelabs -> account -> user settings -> copy driver creating url
+        //https://username:accesskey@ondemand.apac-southeast-1.saucelabs.com:443/wd/hub
+        String remoteURL = "https://anytechlabs:703d852b-1b0f-4a82-b920-fc3e2f85ae20@ondemand.apac-southeast-1.saucelabs.com:443/wd/hub";
+
+        driver = new RemoteWebDriver(new URL(remoteURL),capabilities); //parent of aal driver classes
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -70,7 +74,7 @@ public class OhrmAddDeleteEmployeeTest {
 
             driver.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("admin123");
             test1.log(Status.PASS, "PAssword Entered");
-            driver.findElement(By.xpath("//input[@value='LOGIN']")).click();
+            driver.findElement(By.xpath("//input[@value='LOGIN1']")).click();
             test1.log(Status.PASS, "clicked on login");
         }catch (Exception e){
             test1.log(Status.FAIL,e.getMessage());
